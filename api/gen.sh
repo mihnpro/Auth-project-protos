@@ -1,0 +1,1 @@
+protoc --go_out=../gen/go/authpb --go_opt=paths=source_relative --go-grpc_out=../gen/go/authpb --go-grpc_opt=paths=source_relative auth.proto

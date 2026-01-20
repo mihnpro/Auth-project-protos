@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/mihnpro/Auth-project-protos/auth/gen/go/authpb";
+
+
+// SignUpRequest for registration
+message SignUpRequest {
+    // SignUpRequest includes field email address
+    string email_address = 1;
+    // SignUpRequest includes field password
+    string password = 2;
+    // SignUpRequest includes field phone number
+    string phone_number = 3;
+}
+
+// SignUpResponse after registration
+message SignUpResponse {
+    // SignUpResponse includes field user id
+    uint32 user_id = 1;
+    // SignUpResponse includes field message
+    string message = 2;
+}
+
+// LoginRequest for login
+message LoginRequest {
+    // LoginRequest includes field email address
+    string email_address = 1;
+    // LoginRequest includes field password
+    string password = 2;
+    // LoginRequest includes field expires at
+}
+
+// LoginResponse after login
+message LoginResponse {
+    // LoginResponse includes field token
+    string access_token = 1;
+    // LoginResponse includes field user id
+    uint32 user_id = 2;
+    // LoginResponse includes field expires at
+    int64 expires_at = 4;
+}
+
+// RefreshTokenRequest for refresh token
+message RefreshTokenRequest {
+    // RefreshTokenRequest includes field access token
+    string access_token = 1;
+    // RefreshTokenRequest includes field refresh token
+    string refresh_token = 2;
+}
+
+// RefreshTokenResponse for get new tokens
+message RefreshTokenResponse {
+    // RefreshTokenResponse includes field access token
+    string access_token = 1;
+    // RefreshTokenResponse includes field refresh token
+    string refresh_token = 2;
+  
+}
+
+// LogoutRequest for logout
+message LogoutRequest {
+    uint32 user_id = 1;
+}
+
+// LogoutResponse after logout
+message LogoutResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+// AuthService for auth in my project
+service AuthService {
+    // SignUp method for registration
+  rpc SignUp(SignUpRequest) returns (SignUpResponse);
+  // Login method for login
+  rpc Login(LoginRequest) returns (LoginResponse);
+  // RefreshToken method for refresh tokens
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+
+  // Logout method for logout
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+
+}

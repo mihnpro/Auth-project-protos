@@ -198,10 +198,12 @@ func (x *LoginRequest) GetPassword() string {
 // LoginResponse after login
 type LoginResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// LoginResponse includes field token
+	// LoginResponse includes field access token
 	AccessToken string `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	// LoginResponse includes field refresh token
+	RefreshToken string `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
 	// LoginResponse includes field user id
-	UserId uint32 `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId uint32 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	// LoginResponse includes field expires at
 	ExpiresAt     int64 `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -241,6 +243,13 @@ func (*LoginResponse) Descriptor() ([]byte, []int) {
 func (x *LoginResponse) GetAccessToken() string {
 	if x != nil {
 		return x.AccessToken
+	}
+	return ""
+}
+
+func (x *LoginResponse) GetRefreshToken() string {
+	if x != nil {
+		return x.RefreshToken
 	}
 	return ""
 }
@@ -482,10 +491,11 @@ const file_auth_proto_rawDesc = "" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"O\n" +
 	"\fLoginRequest\x12#\n" +
 	"\remail_address\x18\x01 \x01(\tR\femailAddress\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"j\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"\x8f\x01\n" +
 	"\rLoginResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\rR\x06userId\x12\x1d\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\rR\x06userId\x12\x1d\n" +
 	"\n" +
 	"expires_at\x18\x04 \x01(\x03R\texpiresAt\"]\n" +
 	"\x13RefreshTokenRequest\x12!\n" +

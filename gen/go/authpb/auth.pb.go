@@ -203,9 +203,7 @@ type LoginResponse struct {
 	// LoginResponse includes field refresh token
 	RefreshToken string `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
 	// LoginResponse includes field user id
-	UserId uint32 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	// LoginResponse includes field expires at
-	ExpiresAt     int64 `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	UserId        uint32 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -257,13 +255,6 @@ func (x *LoginResponse) GetRefreshToken() string {
 func (x *LoginResponse) GetUserId() uint32 {
 	if x != nil {
 		return x.UserId
-	}
-	return 0
-}
-
-func (x *LoginResponse) GetExpiresAt() int64 {
-	if x != nil {
-		return x.ExpiresAt
 	}
 	return 0
 }
@@ -491,13 +482,11 @@ const file_auth_proto_rawDesc = "" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"O\n" +
 	"\fLoginRequest\x12#\n" +
 	"\remail_address\x18\x01 \x01(\tR\femailAddress\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"\x8f\x01\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"p\n" +
 	"\rLoginResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\x12\x17\n" +
-	"\auser_id\x18\x03 \x01(\rR\x06userId\x12\x1d\n" +
-	"\n" +
-	"expires_at\x18\x04 \x01(\x03R\texpiresAt\"]\n" +
+	"\auser_id\x18\x03 \x01(\rR\x06userId\"]\n" +
 	"\x13RefreshTokenRequest\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"^\n" +

@@ -40,8 +40,6 @@ message LoginResponse {
     string refresh_token = 2;
     // LoginResponse includes field user id
     uint32 user_id = 3;
-    // LoginResponse includes field expires at
-    int64 expires_at = 4;
 }
 
 // RefreshTokenRequest for refresh token

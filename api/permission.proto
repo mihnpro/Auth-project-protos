@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package permissions;
+
+option go_package = "github.com/mihnpro/Auth-project-protos/auth/gen/go/permissionspb";
+
+import "google/protobuf/empty.proto";
+
+
+// PermissionsService is a service for managing permissions and roles.
+service PermissionsService {
+  // Назначить роль пользователю
+  rpc AssignRole(AssignRoleRequest) returns (google.protobuf.Empty);
+  
+  // Проверить право доступа
+  rpc CheckPermission(CheckPermissionRequest) returns (CheckPermissionResponse);
+  
+  // Получить все права пользователя
+  rpc GetUserPermissions(GetUserPermissionsRequest) returns (GetUserPermissionsResponse);
+}
+
+message AssignRoleRequest {
+  uint32 user_id = 1;
+  string role = 2;  // admin, user, moderator
+}
+
+message CheckPermissionRequest {
+  uint32 user_id = 1;
+  string permission = 2;  // projects:read
+}
+
+message CheckPermissionResponse {
+  bool allowed = 1;
+}
+
+message GetUserPermissionsRequest {
+  uint32 user_id = 1;
+}
+
+message GetUserPermissionsResponse {
+  repeated string permissions = 1;
+}

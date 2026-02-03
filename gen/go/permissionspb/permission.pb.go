@@ -216,7 +216,7 @@ func (x *GetUserPermissionsRequest) GetUserId() uint32 {
 
 type GetUserPermissionsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Permissions   []string               `protobuf:"bytes,1,rep,name=permissions,proto3" json:"permissions,omitempty"`
+	Permissions   string                 `protobuf:"bytes,1,opt,name=permissions,proto3" json:"permissions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -251,11 +251,11 @@ func (*GetUserPermissionsResponse) Descriptor() ([]byte, []int) {
 	return file_permission_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *GetUserPermissionsResponse) GetPermissions() []string {
+func (x *GetUserPermissionsResponse) GetPermissions() string {
 	if x != nil {
 		return x.Permissions
 	}
-	return nil
+	return ""
 }
 
 var File_permission_proto protoreflect.FileDescriptor
@@ -276,7 +276,7 @@ const file_permission_proto_rawDesc = "" +
 	"\x19GetUserPermissionsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\rR\x06userId\">\n" +
 	"\x1aGetUserPermissionsResponse\x12 \n" +
-	"\vpermissions\x18\x01 \x03(\tR\vpermissions2\x9f\x02\n" +
+	"\vpermissions\x18\x01 \x01(\tR\vpermissions2\x9f\x02\n" +
 	"\x12PermissionsService\x12D\n" +
 	"\n" +
 	"AssignRole\x12\x1e.permissions.AssignRoleRequest\x1a\x16.google.protobuf.Empty\x12\\\n" +

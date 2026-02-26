@@ -7,6 +7,8 @@
 package authpb
 
 import (
+	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -23,13 +25,10 @@ const (
 
 // SignUpRequest for registration
 type SignUpRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// SignUpRequest includes field email address
-	EmailAddress string `protobuf:"bytes,1,opt,name=email_address,json=emailAddress,proto3" json:"email_address,omitempty"`
-	// SignUpRequest includes field password
-	Password string `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	// SignUpRequest includes field phone number
-	PhoneNumber   string `protobuf:"bytes,3,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EmailAddress  string                 `protobuf:"bytes,1,opt,name=email_address,json=emailAddress,proto3" json:"email_address,omitempty"`
+	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	PhoneNumber   string                 `protobuf:"bytes,3,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -87,11 +86,9 @@ func (x *SignUpRequest) GetPhoneNumber() string {
 
 // SignUpResponse after registration
 type SignUpResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// SignUpResponse includes field user id
-	UserId uint32 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	// SignUpResponse includes field message
-	Message       string `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        uint32                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -142,11 +139,9 @@ func (x *SignUpResponse) GetMessage() string {
 
 // LoginRequest for login
 type LoginRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// LoginRequest includes field email address
-	EmailAddress string `protobuf:"bytes,1,opt,name=email_address,json=emailAddress,proto3" json:"email_address,omitempty"`
-	// LoginRequest includes field password
-	Password      string `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"` // LoginRequest includes field expires at
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	EmailAddress  string                 `protobuf:"bytes,1,opt,name=email_address,json=emailAddress,proto3" json:"email_address,omitempty"`
+	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -197,13 +192,10 @@ func (x *LoginRequest) GetPassword() string {
 
 // LoginResponse after login
 type LoginResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// LoginResponse includes field access token
-	AccessToken string `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	// LoginResponse includes field refresh token
-	RefreshToken string `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
-	// LoginResponse includes field user id
-	UserId        uint32 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	UserId        uint32                 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -261,11 +253,9 @@ func (x *LoginResponse) GetUserId() uint32 {
 
 // RefreshTokenRequest for refresh token
 type RefreshTokenRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// RefreshTokenRequest includes field access token
-	AccessToken string `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	// RefreshTokenRequest includes field refresh token
-	RefreshToken  string `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -316,11 +306,9 @@ func (x *RefreshTokenRequest) GetRefreshToken() string {
 
 // RefreshTokenResponse for get new tokens
 type RefreshTokenResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// RefreshTokenResponse includes field access token
-	AccessToken string `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	// RefreshTokenResponse includes field refresh token
-	RefreshToken  string `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -472,7 +460,7 @@ var File_auth_proto protoreflect.FileDescriptor
 const file_auth_proto_rawDesc = "" +
 	"\n" +
 	"\n" +
-	"auth.proto\x12\x04auth\"s\n" +
+	"auth.proto\x12\x04auth\x1a)vendor.proto/google/api/annotations.proto\x1a;vendor.proto/protoc-gen-openapiv2/options/annotations.proto\"s\n" +
 	"\rSignUpRequest\x12#\n" +
 	"\remail_address\x18\x01 \x01(\tR\femailAddress\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12!\n" +
@@ -497,12 +485,18 @@ const file_auth_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\rR\x06userId\"D\n" +
 	"\x0eLogoutResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage2\xf0\x01\n" +
-	"\vAuthService\x123\n" +
-	"\x06SignUp\x12\x13.auth.SignUpRequest\x1a\x14.auth.SignUpResponse\x120\n" +
-	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x12E\n" +
-	"\fRefreshToken\x12\x19.auth.RefreshTokenRequest\x1a\x1a.auth.RefreshTokenResponse\x123\n" +
-	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x14.auth.LogoutResponseB;Z9github.com/mihnpro/Auth-project-protos/auth/gen/go/authpbb\x06proto3"
+	"\amessage\x18\x02 \x01(\tR\amessage2\x98\x05\n" +
+	"\vAuthService\x12\xa6\x01\n" +
+	"\x06SignUp\x12\x13.auth.SignUpRequest\x1a\x14.auth.SignUpResponse\"q\x92AP\n" +
+	"\x0eAuthentication\x12\x11User registration\x1a+Register a new user with email and password\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/api/v1/auth/signup\x12\x97\x01\n" +
+	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\"e\x92AE\n" +
+	"\x0eAuthentication\x12\n" +
+	"User login\x1a'Authenticate user and return JWT tokens\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/api/v1/auth/login\x12\xac\x01\n" +
+	"\fRefreshToken\x12\x19.auth.RefreshTokenRequest\x1a\x1a.auth.RefreshTokenResponse\"e\x92AC\n" +
+	"\x0eAuthentication\x12\x0eRefresh tokens\x1a!Get new access and refresh tokens\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/api/v1/auth/refresh\x12\x96\x01\n" +
+	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x14.auth.LogoutResponse\"a\x92A@\n" +
+	"\x0eAuthentication\x12\vUser logout\x1a!Logout user and invalidate tokens\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/api/v1/auth/logoutB\xbd\x01\x92A\x7f\x12=\n" +
+	"\x10Auth Service API\x12$Authentication and Authorization API2\x031.0\x1a\x0elocalhost:8080\"\a/api/v1*\x01\x012\x10application/json:\x10application/jsonZ9github.com/mihnpro/Auth-project-protos/auth/gen/go/authpbb\x06proto3"
 
 var (
 	file_auth_proto_rawDescOnce sync.Once

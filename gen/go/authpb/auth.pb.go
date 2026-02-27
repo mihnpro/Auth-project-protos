@@ -485,17 +485,17 @@ const file_auth_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\rR\x06userId\"D\n" +
 	"\x0eLogoutResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage2\x98\x05\n" +
-	"\vAuthService\x12\xa6\x01\n" +
-	"\x06SignUp\x12\x13.auth.SignUpRequest\x1a\x14.auth.SignUpResponse\"q\x92AP\n" +
-	"\x0eAuthentication\x12\x11User registration\x1a+Register a new user with email and password\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/api/v1/auth/signup\x12\x97\x01\n" +
-	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\"e\x92AE\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage2\xfc\x04\n" +
+	"\vAuthService\x12\x9f\x01\n" +
+	"\x06SignUp\x12\x13.auth.SignUpRequest\x1a\x14.auth.SignUpResponse\"j\x92AP\n" +
+	"\x0eAuthentication\x12\x11User registration\x1a+Register a new user with email and password\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/auth/signup\x12\x90\x01\n" +
+	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\"^\x92AE\n" +
 	"\x0eAuthentication\x12\n" +
-	"User login\x1a'Authenticate user and return JWT tokens\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/api/v1/auth/login\x12\xac\x01\n" +
-	"\fRefreshToken\x12\x19.auth.RefreshTokenRequest\x1a\x1a.auth.RefreshTokenResponse\"e\x92AC\n" +
-	"\x0eAuthentication\x12\x0eRefresh tokens\x1a!Get new access and refresh tokens\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/api/v1/auth/refresh\x12\x96\x01\n" +
-	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x14.auth.LogoutResponse\"a\x92A@\n" +
-	"\x0eAuthentication\x12\vUser logout\x1a!Logout user and invalidate tokens\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/api/v1/auth/logoutB\xbd\x01\x92A\x7f\x12=\n" +
+	"User login\x1a'Authenticate user and return JWT tokens\x82\xd3\xe4\x93\x02\x10:\x01*\"\v/auth/login\x12\xa5\x01\n" +
+	"\fRefreshToken\x12\x19.auth.RefreshTokenRequest\x1a\x1a.auth.RefreshTokenResponse\"^\x92AC\n" +
+	"\x0eAuthentication\x12\x0eRefresh tokens\x1a!Get new access and refresh tokens\x82\xd3\xe4\x93\x02\x12:\x01*\"\r/auth/refresh\x12\x8f\x01\n" +
+	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x14.auth.LogoutResponse\"Z\x92A@\n" +
+	"\x0eAuthentication\x12\vUser logout\x1a!Logout user and invalidate tokens\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/auth/logoutB\xbd\x01\x92A\x7f\x12=\n" +
 	"\x10Auth Service API\x12$Authentication and Authorization API2\x031.0\x1a\x0elocalhost:8082\"\a/api/v1*\x01\x012\x10application/json:\x10application/jsonZ9github.com/mihnpro/Auth-project-protos/auth/gen/go/authpbb\x06proto3"
 
 var (

@@ -75,7 +75,7 @@ service AuthService {
     // SignUp method for registration
     rpc SignUp(SignUpRequest) returns (SignUpResponse) {
         option (google.api.http) = {
-            post: "/api/v1/auth/signup"
+            post: "/auth/signup"
             body: "*"
         };
         // OpenAPI аннотация (дополнительно)
@@ -89,7 +89,7 @@ service AuthService {
     // Login method for login
     rpc Login(LoginRequest) returns (LoginResponse) {
         option (google.api.http) = {
-            post: "/api/v1/auth/login"
+            post: "/auth/login"
             body: "*"
         };
         // OpenAPI аннотация (дополнительно)
@@ -103,7 +103,7 @@ service AuthService {
     // RefreshToken method for refresh tokens
     rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {
         option (google.api.http) = {
-            post: "/api/v1/auth/refresh"
+            post: "/auth/refresh"
             body: "*"
         };
         // OpenAPI аннотация (дополнительно)
@@ -117,7 +117,7 @@ service AuthService {
     // Logout method for logout
     rpc Logout(LogoutRequest) returns (LogoutResponse) {
         option (google.api.http) = {
-            post: "/api/v1/auth/logout"
+            post: "/auth/logout"
             body: "*"
         };
         // OpenAPI аннотация (дополнительно)

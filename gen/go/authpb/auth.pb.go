@@ -496,7 +496,7 @@ const file_auth_proto_rawDesc = "" +
 	"\x0eAuthentication\x12\x0eRefresh tokens\x1a!Get new access and refresh tokens\x82\xd3\xe4\x93\x02\x19:\x01*\"\x14/api/v1/auth/refresh\x12\x96\x01\n" +
 	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x14.auth.LogoutResponse\"a\x92A@\n" +
 	"\x0eAuthentication\x12\vUser logout\x1a!Logout user and invalidate tokens\x82\xd3\xe4\x93\x02\x18:\x01*\"\x13/api/v1/auth/logoutB\xbd\x01\x92A\x7f\x12=\n" +
-	"\x10Auth Service API\x12$Authentication and Authorization API2\x031.0\x1a\x0elocalhost:8080\"\a/api/v1*\x01\x012\x10application/json:\x10application/jsonZ9github.com/mihnpro/Auth-project-protos/auth/gen/go/authpbb\x06proto3"
+	"\x10Auth Service API\x12$Authentication and Authorization API2\x031.0\x1a\x0elocalhost:8082\"\a/api/v1*\x01\x012\x10application/json:\x10application/jsonZ9github.com/mihnpro/Auth-project-protos/auth/gen/go/authpbb\x06proto3"
 
 var (
 	file_auth_proto_rawDescOnce sync.Once

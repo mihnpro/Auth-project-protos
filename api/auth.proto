@@ -14,7 +14,7 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
         version: "1.0";
         description: "Authentication and Authorization API";
     };
-    host: "localhost:8080";
+    host: "localhost:8082";
     base_path: "/api/v1";
     schemes: HTTP;
     consumes: "application/json";
